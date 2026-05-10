@@ -1,0 +1,41 @@
+{
+  "categoryItems":
+[
+{
+  "id": 1,
+  "name": "Ключ на 60",
+  "shortname": "key60",
+  "description": "Ключ на 60, термін придатності необмежений. Матеріал: чавун",
+  "price": 750,
+  "image_path":"gaikovikluci/kluch1.webp"
+},
+{
+  "id": 2,
+  "name": "Ключ ріжковий СТАНДАРТ 17х19 мм",
+  "shortname": "key17x19",
+  "description": "Ключ СТАНДАРТ 17х19, термін придатності необмежений. Матеріал: чавун",
+  "price": 199,
+  "image_path":"gaikovikluci/kluch2.webp"
+
+},
+{
+  "id": 3,
+  "name": "Професійний набір інструментів",
+  "shortname": "collectionOfTools",
+  "description": "Професійний набір інструментів 216 предметів у зручному пластиковому кейсі Багатофункціональний чоловічій набір інструментів. Ваш повний арсенал для будь-яких завдань",
+  "price": 2499,
+  "image_path":"gaikovikluci/nabir_kluchiv1.jpg"
+
+},
+{
+  "id": 4,
+  "name": "Набір гайкових ключів",
+  "shortname": "masterKeys",
+  "description": "Набір ключів прямих комбінованих з тріскачкою 22 шт 6-32 мм G10341 GEKO",
+  "price": 4999,
+  "image_path":"gaikovikluci/nabir_kluchiv2.webp"
+
+}
+],
+  "categoryName":"Гайкові ключі та набори інструментів"
+}

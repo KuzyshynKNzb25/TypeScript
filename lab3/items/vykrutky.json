@@ -1,0 +1,24 @@
+{
+    "categoryItems":
+[
+{
+  "id": 1,
+  "name": "Жовта викрутка",
+  "shortname": "Stanley",
+  "description": "Викрутка Stanley Essential PH2 х 100 мм (STHT0-60335)",
+  "price": 109,
+  "image_path":"vykrutky/vykrutka1.webp"
+},
+{
+  "id": 2,
+  "name": "Викрутка зелена двохстороння",
+  "shortname": "Technics",
+  "description": "Викрутка +/- двостороння, PH №2, 30мм SL 6х30мм Technics 46-402_x000D_",
+  "price": 115,
+  "image_path":"vykrutky/vykrutka2.jpg"
+
+}
+],
+  "categoryName":"Викрутки"
+}
+

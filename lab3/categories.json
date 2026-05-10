@@ -1,0 +1,31 @@
+[
+    {
+        "id":1,
+        "name":"gaikovikluci",
+        "shortname":"ключі",
+        "notes":"Якщо вам потрібно щось закрутити, а не має чим, тоді вам точно до нас",
+        "image_name":"gaikovikluci.jpg"
+    },
+    {
+        "id":2,
+        "name":"molotky",
+        "shortname":"молотки",
+        "notes":"Широкий асортимент забивних інструментів",
+        "image_name":"molotky.jpg"
+
+    },
+    {
+        "id":3,
+        "name":"pylky",
+        "shortname":"пилки",
+        "notes":"Пилки з різної сталі та з різним призначенням",
+        "image_name":"pylky.jpg"
+    },
+    {
+        "id":4,
+        "name":"vykrutky",
+        "shortname":"викрутки",
+        "notes":"Круть-верть туди сюди",
+        "image_name":"vykrutky.jpg"
+    }
+]

@@ -1,0 +1,42 @@
+{
+    "categoryItems":
+[
+{
+  "id": 1,
+  "name": "Молоток Tolsen",
+  "shortname": "Tolsen",
+  "description": "Молоток Tolsen \"ПРОФІ\" з цвяходером цільнометалевий (16 oz)",
+  "price": 599,
+  "image_path":"molotky/molotok1.jpg"
+},
+{
+  "id": 2,
+  "name": "Молоток слюсарний",
+  "shortname": "Slesar",
+  "description": "Молоток слюсарний INTERTOOL HT-0212. Вага 0,250 кг",
+  "price": 90,
+  "image_path":"molotky/molotok2.jpg"
+
+},
+{
+  "id": 3,
+  "name": "Молоток слюсарний",
+  "shortname": "BigSlesar",
+  "description": "Молоток слюсарний 1500 г, рукоятка з ясеня",
+  "price": 449,
+  "image_path":"molotky/molotok3.jpg"
+
+},
+{
+  "id": 4,
+  "name": "Киянка ",
+  "shortname": "Kyjanka",
+  "description": "Киянка гумова Miol 680 г Чорна",
+  "price": 120,
+  "image_path":"molotky/molotok4.jpg"
+
+}
+],
+  "categoryName":"Молотки"
+}
+

@@ -1,0 +1,49 @@
+{
+    "categoryItems":
+[
+{
+  "id": 1,
+  "name": "Пилка Ultra",
+  "shortname": "Ultra",
+  "description": "Ручна пила по дереву Dnipro-M ULTRA SK5 400 мм",
+  "price": 519,
+  "image_path":"pylky/pylka1.webp"
+},
+{
+  "id": 2,
+  "name": "Пилка Technics",
+  "shortname": "Technics",
+  "description": "Пила по дереву Technics 41-060 400 мм",
+  "price": 258,
+  "image_path":"pylky/pylka2.webp"
+
+},
+{
+  "id": 3,
+  "name": "Пилка лучкова",
+  "shortname": "Raker",
+  "description": "Пила для дерева лучкова Stanley Raker Tooth (1-15-368)",
+  "price": 446,
+  "image_path":"pylky/pylka3.jpg"
+
+},
+{
+  "id": 4,
+  "name": "Пилка викружна ",
+  "shortname": "INGCO",
+  "description": "Пила INGCO викружна 300 мм 7 з/д 65Mn (HCS30028C)",
+  "price": 120,
+  "image_path":"pylky/pylka4.webp"
+},
+{
+  "id": 5,
+  "name": "Пилка японська ",
+  "shortname": "GRUNTEK",
+  "description": "НОЖІВКА ПО ДЕРЕВУ ЯПОНСЬКА GRUNTEK FUGU 300 ММ",
+  "price": 372,
+  "image_path":"pylky/pylka5.jpg"
+}
+],
+  "categoryName":"Пилки та ножівки"
+}
+
