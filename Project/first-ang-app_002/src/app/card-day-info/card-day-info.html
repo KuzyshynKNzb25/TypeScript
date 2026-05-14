@@ -1,0 +1,200 @@
+<div class="column">
+  <section>
+    <div class="hided-block">
+      <img src="weather-logo2.png" class="hided-image" alt="" />
+      <div class="settings-block">
+        <h4 (click)="showSettings()" class="settings-text">Settings</h4>
+        <svg
+          (click)="showSettings()"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-settings-icon lucide-settings"
+        >
+          <path
+            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+          />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        @if (settingsMode()) {
+          <app-settings-options
+            [temperature]="celciumTemperature"
+            [europeTimeValue]="europeTime()"
+            [meterPerSecondValue]="meterPerSecond"
+            (amTime)="onAmTimeChoice()"
+            (europeTime)="onEuropeTimeChoice()"
+            (farenheitChoice)="onFarenheitChoise()"
+            (celciumChoice)="onCelciumChoice()"
+            (kilometerChoice)="onKilometerPerHourChoice()"
+            (meterPerSecond)="onMeterPerSecond()"
+            (blur)="showSettings()"
+            class="settings-form"
+          />
+        }
+      </div>
+    </div>
+    <div class="header">
+      <div class="search-wrapper">
+        <img src="weather-logo2.png" class="firs-image" alt="" />
+        <div class="search-box">
+          <input
+            #searchField
+            (input)="onType(searchField.value)"
+            (focus)="setFocus(true)"
+            (blur)="setFocus(false)"
+            (keydown.enter)="
+              searchResults().length > 0
+                ? onSearchByCityItem(searchResults()[0], searchField)
+                : onSearchByCityName()
+            "
+            class="search"
+            type="text"
+            placeholder="Enter city name"
+          />
+          <svg
+            (click)="
+              searchResults().length > 0
+                ? onSearchByCityItem(searchResults()[0], searchField)
+                : onSearchByCityName()
+            "
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search-icon lucide-search"
+          >
+            <path d="m21 21-4.34-4.34" />
+            <circle cx="11" cy="11" r="8" />
+          </svg>
+
+          @if (selectMode && isFocused()) {
+            <ul class="search-results">
+              @for (item of searchResults(); track $index) {
+                <li class="search-item" (mousedown)="onSearchByCityItem(item, searchField)">
+                  <span
+                    >{{ item.cityName }} {{ item.city.state ? ', ' + item.city.state : '' }}
+                    {{ item.countryName ? ', ' + item.countryName : '' }}
+                  </span>
+                </li>
+              }
+            </ul>
+          }
+        </div>
+      </div>
+      <div class="settings-block">
+        <h4 (click)="showSettings()" class="settings-text">Settings</h4>
+        <svg
+          (click)="showSettings()"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-settings-icon lucide-settings"
+        >
+          <path
+            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+          />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        @if (settingsMode()) {
+          <app-settings-options
+            [temperature]="celciumTemperature"
+            [europeTimeValue]="europeTime()"
+            [meterPerSecondValue]="meterPerSecond"
+            (amTime)="onAmTimeChoice()"
+            (europeTime)="onEuropeTimeChoice()"
+            (farenheitChoice)="onFarenheitChoise()"
+            (celciumChoice)="onCelciumChoice()"
+            (kilometerChoice)="onKilometerPerHourChoice()"
+            (meterPerSecond)="onMeterPerSecond()"
+            (blur)="showSettings()"
+            class="settings-form"
+          />
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="column">
+    @if (data(); as temp) {
+      <h2 class="card-color-text">Weather in: {{ cityName }}</h2>
+
+      <div class="wrapper row">
+        @for (p of counter(); track $index; let i = $index) {
+          <div class="card-wrap">
+            <div
+              (click)="displayExpandedInformation(i)"
+              [class.selected]="expandedInformation && dayIndexToExpand == i"
+              [class.first]="i == 0"
+              class="card"
+            >
+              @if ((dayIndex + i) % 7 === 0 || (dayIndex + i) % 7 === 6) {
+                <p class="top-line hot">{{ shortDays[(dayIndex + i) % 7] }}</p>
+                <div class="row-between">
+                  <p class="top-line second-line hot">
+                    {{ temp.dailyTemperature[i].date.substring(8, 10) }}
+                  </p>
+                  <p class="second-line hot">{{ temp.dailyTemperature[i].date | date: 'LLLL' }}</p>
+                </div>
+              } @else {
+                <p class="top-line">{{ shortDays[(dayIndex + i) % 7] }}</p>
+                <div class="row-between">
+                  <p class="top-line second-line">
+                    {{ temp.dailyTemperature[i].date.substring(8, 10) }}
+                  </p>
+                  <p class="second-line">{{ temp.dailyTemperature[i].date | date: 'LLLL' }}</p>
+                </div>
+              }
+
+              <div class="image-block">
+                <img class="card-icon" [src]="cloud[cloudIndex()[i]] || 'clear.png'" alt="" />
+              </div>
+
+              <div class="row-evenly">
+                <p class="cold lovest-line">
+                  {{ temp.dailyTemperature[i].minTemperature > 0 ? '+' : ''
+                  }}{{ temp.dailyTemperature[i].minTemperature }}
+                </p>
+                <p class="hot lovest-line">
+                  {{ temp.dailyTemperature[i].maxTemperature > 0 ? '+' : ''
+                  }}{{ temp.dailyTemperature[i].maxTemperature }}
+                </p>
+              </div>
+            </div>
+            @if (expandedInformation && dayIndexToExpand == i) {
+              <app-expanded-information
+                [style.max-width.px]="maxWidth()"
+                [style.left.px]="left()"
+                class="expanded-area"
+                [date]="temp.dailyTemperature[dayIndexToExpand].date"
+                [hourWeather]="temp.hourlyWeather"
+                [dailyWeather]="temp.dailyTemperature[dayIndexToExpand]"
+                [dayMode]="dayIndexToExpand > 4"
+                [europeTime]="europeTime()"
+              >
+              </app-expanded-information>
+            }
+          </div>
+        }
+      </div>
+    } @else {
+      <p>Завантаження прогнозу...</p>
+    }
+  </section>
+</div>

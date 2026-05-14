@@ -1,0 +1,78 @@
+<section class="row wrapp" [class.has-scroll]="hasScroll()">
+  <div class="preview-block">
+    <p class="header-info text-info time">Час</p>
+    <p class="header-info text-info weather-preview">Погода</p>
+    <p class="header-info text-info">Температура</p>
+    <p class="header-info text-info">Відчувається як</p>
+    <p class="header-info text-info">Ймовірність опадів</p>
+    @if (!dayMode) {
+      <p class="header-info text-info">Швидкість вітру</p>
+    }
+  </div>
+  <section #scrollBox class="row main-section">
+    @if (hourMode) {
+      @for (i of indexesToDisplay(); track $index; let num = $index) {
+        <div class="column info">
+          <p class="text-info time">
+            {{ hourWeather[i].digitTime | date: (europeTime ? 'HH:mm' : 'h a') }}
+          </p>
+          <div class="image-block">
+            <img class="card-icon" [src]="cloud[cloudIndex()[num]]" alt="" />
+          </div>
+          <p class="text-info">{{ hourWeather[i].temperature | tempSign }}</p>
+          <p class="text-info">{{ hourWeather[i].feelsLike | tempSign }}</p>
+          <p class="text-info">{{ hourWeather[i].pop }}%</p>
+          <div class="row speed-wind-text">
+            <img
+              [style.rotate.deg]="hourWeather[i].windDegree | windDirection"
+              class="wind-img"
+              src="arrow_wind.png"
+              alt=""
+            />
+            <p class="text-info">{{ hourWeather[i].windSpeed }}</p>
+          </div>
+        </div>
+      }
+    } @else if (dailyWeather) {
+      <div class="column info">
+        <p class="text-info time">{{ europeTime ? '00:00' : '12 AM' }}</p>
+        <div class="image-block">
+          <img class="card-icon" [src]="cloud[todayCloudinessIndex]" alt="" />
+        </div>
+        <p class="text-info">{{ dailyWeather.nightTemperature | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.feelsLikeNight | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.pop }}%</p>
+      </div>
+
+      <div class="column info">
+        <p class="text-info time">{{ europeTime ? '06:00' : '6 AM' }}</p>
+        <div class="image-block">
+          <img class="card-icon" [src]="cloud[todayCloudinessIndex]" alt="" />
+        </div>
+        <p class="text-info">{{ dailyWeather.morningTemperature | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.feelsLikeMorning | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.pop }}%</p>
+      </div>
+
+      <div class="column info">
+        <p class="text-info time">{{ europeTime ? '12:00' : '12 PM' }}</p>
+        <div class="image-block">
+          <img class="card-icon" [src]="cloud[todayCloudinessIndex]" alt="" />
+        </div>
+        <p class="text-info">{{ dailyWeather.dayTemperature | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.feelsLikeDay | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.pop }}%</p>
+      </div>
+
+      <div class="column info">
+        <p class="text-info time">{{ europeTime ? '18:00' : '6 PM' }}</p>
+        <div class="image-block">
+          <img class="card-icon" [src]="cloud[todayCloudinessIndex]" alt="" />
+        </div>
+        <p class="text-info">{{ dailyWeather.eveningTemperature | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.feelsLikeEvening | tempSign }}</p>
+        <p class="text-info">{{ dailyWeather.pop }}%</p>
+      </div>
+    }
+  </section>
+</section>

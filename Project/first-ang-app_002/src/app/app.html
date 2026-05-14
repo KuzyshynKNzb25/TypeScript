@@ -1,0 +1,31 @@
+<style>
+  :host {
+    --bacground: #000033;
+  }
+
+  .cards-wrapper {
+    width: 90%;
+    max-width: 1000px;
+  }
+
+  .main-container {
+    background-color: var(--bacground);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .search-box {
+    width: 90%;
+    max-width: 800px;
+  }
+</style>
+
+<div class="main-container">
+  <app-home-page class="search-box"></app-home-page>
+  <app-card-day-info class="cards-wrapper"></app-card-day-info>
+
+  <router-outlet></router-outlet>
+</div>

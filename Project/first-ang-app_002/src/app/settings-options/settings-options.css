@@ -1,0 +1,19 @@
+select {
+    width: 40%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    gap: 15px;
+
+}
+
+.settings-wrapper {
+    background-color: #333333;
+    padding: 20px 20px 12px 20px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    color: #fff;
+}

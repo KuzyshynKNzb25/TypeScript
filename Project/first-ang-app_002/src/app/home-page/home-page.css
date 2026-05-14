@@ -1,0 +1,24 @@
+:host {
+    --search-top-padding: 5px;
+}
+
+.lucide-search {
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: var(--search-top-padding);
+}
+
+.search {
+    padding: var(--search-top-padding) 20px var(--search-top-padding) 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.search-box {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;;
+}

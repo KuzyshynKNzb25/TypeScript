@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --card-color: #55aaee;
+    --card-border: 2px solid #008855;
+    --card-border-radius: 15px;
+    --info-even: #66baee;
+    --info-odd: #55abff;
+    --selected-background-color:#77ccee;
+    --time-color: #005599;
+}
+
+body {
+    margin: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.row-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,81 @@
+.card-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+.info {
+    border-left: var(--card-border);
+    min-width: 70px;
+}
+
+.info:nth-child(even) {
+    background-color: var(--info-even); 
+}
+
+.info:nth-child(odd) {
+    background-color: var(--info-odd);
+}
+
+.preview-block {
+    flex: 0 0 105px;
+    margin-right: 10px;
+    text-align: start;
+}
+
+.main-section {
+    overflow: auto;
+    padding-bottom: 15px;
+    transition: padding 0.2s;
+}
+
+.margin0 {
+    margin: 0;
+    padding-bottom: 5px;;
+}
+
+.time {
+    background-color: var(--time-color);
+}
+
+.speed-wind-text {
+    margin-top: 15px;
+}
+
+.text-info {
+    margin: 0;
+    padding: 5px;
+}
+
+.weather-preview {
+    height: 25px;
+    margin-top: 10px;
+}
+
+.wind-img {
+    width: 30px;
+    height: 30px;
+}
+
+.wrapp {
+    background-color: var(--selected-background-color);
+    border-radius: var(--card-border-radius);
+    position: relative;
+    padding: 10px 0 0 15px;
+    z-index: 20;
+}
+
+.wrapp.has-scroll {
+    padding:10px 15px 5px 15px;  
+}
+
+.height2l {
+    height: 2lh;
+    padding-bottom: 10px;
+}
+
+.header-info {
+    padding-top: 7px;
+    font-size: 0.7em;
+}
+

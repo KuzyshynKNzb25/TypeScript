@@ -1,0 +1,31 @@
+<div class="settings-wrapper">
+  <div class="flex">
+    <label for="select-temperature">Температура</label>
+    <select name="" id="select-temperature" [value]="temperature ? 'celcium' : 'farengeit'">
+      <option (click)="makeCelciumChoice()" value="celcium">Цельсій, C°</option>
+      <option (click)="makeFarenheitChoice()" value="farengeit">Фаренгейт, F°</option>
+    </select>
+  </div>
+  <div class="flex">
+    <label for="select-wind-speed">Швидкість вітру</label>
+    <select
+      [value]="meterPerSecondValue ? 'meter_per_second' : 'kilometerPerHour'"
+      name=""
+      id="select-wind-speed"
+    >
+      <option (click)="makeMeterChoice()" value="meter_per_second">м/с</option>
+      <option (click)="makeKilometerChoice()" value="kilometerPerHour">км/год</option>
+    </select>
+  </div>
+  <div class="flex">
+    <label for="select-time-format">Формат часу</label>
+    <select [value]="europeTimeValue ? 'europe-time' : 'am-time'" name="" id="select-time-format">
+      <option (click)="makeEuropeTimeChoice()" value="europe-time">
+        {{ currentTime() | date: 'hh:mm' }}
+      </option>
+      <option (click)="makeAmChoice()" value="am-time">
+        {{ currentTime() | date: 'h:mm a' }}
+      </option>
+    </select>
+  </div>
+</div>
